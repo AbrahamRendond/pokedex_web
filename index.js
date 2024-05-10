@@ -4,6 +4,7 @@ const mysql = require('mysql');
 
 // Creación de una nueva aplicación Express
 const app = express();
+const port = process.env.PORT || 3000;
 
 // Configuración del servidor para servir archivos estáticos
 app.use(express.static('public'));
@@ -28,6 +29,6 @@ app.get('/pokedex', (req, res) => {
 });
 
 // Inicia el servidor en el puerto 3000
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log('Servidor escuchando en el puerto 3000');
 });
